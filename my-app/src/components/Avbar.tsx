@@ -37,7 +37,7 @@ function Navbar({ className }: { className?: string }) {
                     </MenuItem>
                 </Link>
             </Menu>
-            Navbar....
+
 
         </div>
     )

@@ -30,11 +30,11 @@ export default function RootLayout({
       lang="en" className="dark"
     >
       <body className={inter.className}>
+        {children}
         <div className="relative w-full flex items-center justify-center" >
           <Navbar />
         </div>
 
-        {children}
       </body>
     </html>
   );
