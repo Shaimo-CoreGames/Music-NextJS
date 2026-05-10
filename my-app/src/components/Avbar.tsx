@@ -1,0 +1,46 @@
+'use client'
+
+import React, { useState } from "react";
+import { HoveredLink, Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
+import { cn } from "../lib/utils";
+
+import Link from "next/link"; // to avoid reloading the page on <a> Use this <Link> instead of <a>
+
+function Navbar({ className }: { className?: string }) {
+    const [active, setActive] = useState<string | null>(null);
+
+
+    return (
+
+        <div className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-100", className)}>
+
+            <Menu setActive={setActive} >
+                <Link href="/">
+                    <MenuItem setActive={setActive} active={active} item="home">
+
+                    </MenuItem>
+                </Link>
+
+                <MenuItem setActive={setActive} active={active} item="Courses">
+                    <div className="flex flex-col gap-2 text-sm">
+                        <HoveredLink href="/courses">Our Courses</HoveredLink>
+                        <HoveredLink href="/courses">Basic Music Theory</HoveredLink>
+                        <HoveredLink href="/courses">Advanced Composition</HoveredLink>
+                        <HoveredLink href="/courses">Songwriting</HoveredLink>
+                        <HoveredLink href="/courses">Music Production</HoveredLink>
+                    </div>
+                </MenuItem>
+
+                <Link href="/contact">
+                    <MenuItem setActive={setActive} active={active} item="Contact Us">
+
+                    </MenuItem>
+                </Link>
+            </Menu>
+            Navbar....
+
+        </div>
+    )
+}
+
+export default Navbar
