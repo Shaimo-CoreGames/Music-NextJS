@@ -39,15 +39,23 @@ const musicSchoolTestimonials = [
 
 function MusicSchoolTestimonials() {
     return (
-        <div className="h-[40rem] w-full dark:bg-black dark:bg-grid-white/[0.2] relative flex flex-col items-center justify-center overflow-hidden">
+        // Main Container: Controls the height and centers everything
+        <div className="h-[40rem] w-full dark:bg-black relative flex flex-col items-center justify-center overflow-hidden">
+
+            {/* 1. Background Layer: Absolute and Z-0 */}
             <div className={cn(
                 "absolute inset-0 z-0",
                 "[background-size:40px_40px]",
                 "[background-image:linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)]",
                 "dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]",
-            )}
-            >
-            <h2 className="text-3xl font-bold text-center mt-50 mb-14 z-10">Hear our Harmony: Voices of success</h2>
+            )}></div>
+
+            {/* 2. Content Layer: Normal Flow and Z-10 */}
+            <h2 className="text-3xl md:text-5xl font-bold text-center mb-12 z-10">
+                Hear our Harmony: Voices of success
+            </h2>
+
+            <div className="flex justify-center w-full overflow-hidden px-4 sm:px-6 lg:px-8 z-10">
                 <div className="w-full max-w-6xl">
                     <InfiniteMovingCards
                         items={musicSchoolTestimonials}
@@ -57,8 +65,7 @@ function MusicSchoolTestimonials() {
                 </div>
             </div>
         </div>
-
-    )
+    );
 }
 
 export default MusicSchoolTestimonials
